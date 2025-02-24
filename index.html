@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>For My Love ❤️</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background: #ffebee;
+            transition: background 0.5s;
+        }
+        h1 {
+            font-size: 3rem;
+            color: #d81b60;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 1.5rem;
+            cursor: pointer;
+            background: #d50000;
+            color: white;
+            border: none;
+            margin-top: 20px;
+            transition: all 0.2s ease-in-out;
+        }
+        button:hover {
+            transform: scale(1.1);
+        }
+        .love-text {
+            position: absolute;
+            font-size: 1.5rem;
+            color: #ff1744;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>For Uhh Miss... ❤️</h1>
+    <button onclick="startPrank()">Click Here 😁</button>
+
+    <script>
+        let audioStarted = false;
+        let loveVoices = [
+            "https://www.fesliyanstudios.com/royalty-free-music/downloads-c/funny-music/21",
+            "https://www.fesliyanstudios.com/play-mp3/6401", // Cute "I Love You" voice
+            "https://www.fesliyanstudios.com/play-mp3/6534", // Kiss sound
+            "https://www.fesliyanstudios.com/play-mp3/6487"  // Heartbeat sound
+        ];
+
+        function playSound() {
+            if (!audioStarted) {
+                let audio = new Audio(loveVoices[Math.floor(Math.random() * loveVoices.length)]);
+                audio.play();
+                audioStarted = true;
+            }
+        }
+
+        function startPrank() {
+            // Start playing sound
+            playSound();
+            
+            // Mouse Move - "I Love You" everywhere
+            document.addEventListener('mousemove', (e) => {
+                let loveText = document.createElement('div');
+                loveText.classList.add('love-text');
+                loveText.innerText = "I Love You ❤️";
+                document.body.appendChild(loveText);
+                loveText.style.left = `${e.pageX}px`;
+                loveText.style.top = `${e.pageY}px`;
+
+                setTimeout(() => {
+                    loveText.remove();
+                }, 2000);
+            });
+
+            // Random Sound on Mouse Click
+            document.addEventListener('click', () => {
+                let audio = new Audio(loveVoices[Math.floor(Math.random() * loveVoices.length)]);
+                audio.play();
+            });
+
+            // Background color change
+            setInterval(() => {
+                document.body.style.background = `rgb(${255}, ${Math.random() * 200}, ${Math.random() * 200})`;
+            }, 500);
+        }
+    </script>
+
+</body>
+</html>
