@@ -45,9 +45,9 @@
         let audioStarted = false;
         let loveVoices = [
             "https://www.fesliyanstudios.com/royalty-free-music/downloads-c/funny-music/21",
-            "https://www.fesliyanstudios.com/play-mp3/6401", // Cute "I Love You" voice
-            "https://www.fesliyanstudios.com/play-mp3/6534", // Kiss sound
-            "https://www.fesliyanstudios.com/play-mp3/6487"  // Heartbeat sound
+            // "https://www.fesliyanstudios.com/play-mp3/6401", // Cute "I Love You" voice
+            // "https://www.fesliyanstudios.com/play-mp3/6534", // Kiss sound
+            // "https://www.fesliyanstudios.com/play-mp3/6487"  // Heartbeat sound
         ];
 
         function playSound() {
@@ -66,7 +66,7 @@
             document.addEventListener('mousemove', (e) => {
                 let loveText = document.createElement('div');
                 loveText.classList.add('love-text');
-                loveText.innerText = "I Love You ❤️";
+                loveText.innerText = "I am missing You ❤️";
                 document.body.appendChild(loveText);
                 loveText.style.left = `${e.pageX}px`;
                 loveText.style.top = `${e.pageY}px`;
